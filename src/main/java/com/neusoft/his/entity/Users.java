@@ -1,5 +1,6 @@
 package com.neusoft.his.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 
 /**
@@ -8,7 +9,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author yhc
- * @since 2024-01-14
+ * @since 2024-01-15
  */
 public class Users implements Serializable {
 
@@ -20,7 +21,8 @@ public class Users implements Serializable {
 
     private String password;
 
-    private String userType;
+    @TableField("userType")
+    private String usertype;
 
     private String department;
 
@@ -49,12 +51,12 @@ public class Users implements Serializable {
         this.password = password;
     }
 
-    public String getUserType() {
-        return userType;
+    public String getUsertype() {
+        return usertype;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 
     public String getDepartment() {
@@ -71,7 +73,7 @@ public class Users implements Serializable {
         "username=" + username +
         ", fullname=" + fullname +
         ", password=" + password +
-        ", userType=" + userType +
+        ", usertype=" + usertype +
         ", department=" + department +
         "}";
     }

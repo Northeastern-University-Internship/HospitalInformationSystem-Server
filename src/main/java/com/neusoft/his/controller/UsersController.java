@@ -2,9 +2,7 @@ package com.neusoft.his.controller;
 
 
 import com.neusoft.his.dto.Message;
-import com.neusoft.his.entity.Userinfo;
 import com.neusoft.his.entity.Users;
-import com.neusoft.his.service.IUserinfoService;
 import com.neusoft.his.service.IUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author yhc
- * @since 2024-01-14
+ * @since 2024-01-15
  */
 @RestController
 @RequestMapping("/his/users")
@@ -39,7 +37,5 @@ public class UsersController {
         System.out.println("Success....");
         return message;
     }
-
-
 }
 

@@ -3,9 +3,7 @@ package com.neusoft.his.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.neusoft.his.dto.LoginUserinfoBean;
 import com.neusoft.his.dto.Message;
-import com.neusoft.his.entity.Userinfo;
 import com.neusoft.his.entity.Users;
-import com.neusoft.his.mapper.UserinfoMapper;
 import com.neusoft.his.mapper.UsersMapper;
 import com.neusoft.his.service.IUsersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -18,7 +16,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author yhc
- * @since 2024-01-14
+ * @since 2024-01-15
  */
 @Service
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements IUsersService {
@@ -78,5 +76,4 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         }
         return message;
     }
-        }
-
+}
