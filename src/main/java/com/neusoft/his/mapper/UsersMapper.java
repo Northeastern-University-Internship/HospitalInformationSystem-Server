@@ -17,6 +17,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UsersMapper extends BaseMapper<Users> {
-    @Insert(" insert into users(username,fullname,password,userType,department) values(#{username},#{fullname},#{password},#{userType},#{department})")
+    @Insert(" insert into users(username,fullname,password,userType,department) values(#{username},#{fullname},#{password},#{usertype},#{department})")
     public int insertIntoUsers(Users users);
 }
