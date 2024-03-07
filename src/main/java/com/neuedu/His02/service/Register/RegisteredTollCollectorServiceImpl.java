@@ -1,0 +1,29 @@
+package com.neuedu.His02.service.Register;
+
+import com.neuedu.His02.entity.PatientCosts;
+import com.neuedu.His02.mapper.Register.RegisteredTollCollectorMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/**
+ * @Author: ZJH
+ * @Date: 2021/12/22/15:43
+ * @Description:
+ */
+@Service
+@Transactional
+public class RegisteredTollCollectorServiceImpl implements RegisteredTollCollectorService {
+
+    @Autowired
+    RegisteredTollCollectorMapper dao;
+
+    @Override
+    public List<PatientCosts> selectAll(PatientCosts u) {
+
+        return dao.selectAll(u);
+    }
+
+}

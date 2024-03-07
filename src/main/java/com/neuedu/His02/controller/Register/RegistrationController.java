@@ -1,0 +1,93 @@
+package com.neuedu.His02.controller.Register;
+
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+import com.neuedu.His02.service.Register.RegisterService;
+import com.neuedu.His02.entity.Invoice;
+import com.neuedu.His02.util.EnumCode;
+import com.neuedu.His02.util.ResultUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.neuedu.His02.entity.Register;
+
+@RestController
+@RequestMapping("/register_clerk")
+public class RegistrationController {
+	@Autowired
+	private RegisterService service;
+
+	@RequestMapping("/register")
+	// http://localhost:8899/register_clerk/register?CaseNumber='1'&RealName='1'&Gender=1&IDnumber='1'&BirthDate="2021-12-12"&Age=1&AgeType='1'&HomeAddress='1'&VisitDate='1'&Noon='1'&DeptID=1&UserID=1&RegistLeID=1&SettleID=1&IsBook='1'&RegistTime=1&RegisterID='2021-12-12'&VisitState=1
+	public ResultUtil add(Register r) {
+		System.out.println("Add information："+r.getRegistLeID());
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return new ResultUtil(EnumCode.OK.getValue(),"Registered successfully",service.add(r));
+	}
+	@PostMapping("/selectAll")
+	// http://localhost:8899/register_clerk/selectAll?CaseNumber=60
+	public ResultUtil selectAll(Register r) {
+		System.out.println("The query performed");
+		return new ResultUtil(EnumCode.OK.getValue(), "Query successfully",service.selectAll(r));
+	}
+
+	@PostMapping("/print")
+	public ResultUtil print(@RequestBody Register r) throws ParseException {
+		System.out.println("Printing is performed");
+		System.out.println(r.getID());
+		Invoice invoice1 = new Invoice();
+		Invoice invoice2 = new Invoice();
+		invoice1 = service.selectMaxInvoice();
+		int invoicenum1 = Integer.parseInt(invoice1.getInvoiceNum());
+		int invoicenum2 = invoicenum1 + 1;
+		invoice2.setInvoiceNum(Integer.toString(invoicenum2));
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		Date nowDate = df.parse(df.format(new Date()));
+		invoice2.setCreationTime(nowDate);
+		invoice2.setState(4);
+		invoice2.setDailyState(0);
+		invoice2.setFeeType(51);
+		invoice2.setRegistID(r.getID());
+		BigDecimal sumMoney = new BigDecimal("0");
+		BigDecimal bignum1 = new BigDecimal("50");
+		BigDecimal bignum2 = new BigDecimal("8");
+		BigDecimal bignum3 = new BigDecimal("1");
+		if(r.getIsBook().equals('1') == true){
+			sumMoney = sumMoney.add(bignum3);
+		}
+		if(r.getRegistLeID() == 1){
+			sumMoney = sumMoney.add(bignum1);
+		}else if (r.getRegistLeID() == 2) {
+			sumMoney = sumMoney.add(bignum2);
+		}
+		invoice2.setMoney(sumMoney);
+		invoice2.setUserID(9);
+		System.out.println("Add Invoice："+service.addInvoice(invoice2));
+		return new ResultUtil(EnumCode.OK.getValue(), "Printed successfully",service.print(r));
+	}
+
+	@RequestMapping("selectInvoice")
+	public ResultUtil selectInvoice(Invoice invoice) {
+		System.out.println("Query Invoice performed");
+		return new ResultUtil(EnumCode.OK.getValue(), "Inquiry Invoice Successful",service.selectInvoice(invoice));
+	}
+
+	@RequestMapping("selectMaxInvoice")
+	// http://localhost:8899/register_clerk/selectMaxInvoice
+	public Invoice selectMaxInvoce() throws ParseException {
+		Invoice invoice1 = new Invoice();
+		invoice1 = service.selectMaxInvoice();
+		Invoice invoice2 = new Invoice();
+		invoice1 = service.selectMaxInvoice();
+		int invoicenum1 = Integer.parseInt(invoice1.getInvoiceNum());
+		int invoicenum2 = invoicenum1 + 1;
+		invoice2.setInvoiceNum(Integer.toString(invoicenum2));
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date nowDate = df.parse(df.format(new Date()));
+		invoice2.setCreationTime(nowDate);
+		return invoice1;
+	}
+}
