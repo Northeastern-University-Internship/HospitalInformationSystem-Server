@@ -1,7 +1,6 @@
 package com.neuedu.His02.mapper.Register;
 
 import com.neuedu.His02.entity.*;
-import com.neuedu.His02.entity.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

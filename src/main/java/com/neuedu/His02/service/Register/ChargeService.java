@@ -1,7 +1,6 @@
 package com.neuedu.His02.service.Register;
 
 import com.neuedu.His02.entity.*;
-import com.neuedu.His02.entity.*;
 
 import java.util.List;
 

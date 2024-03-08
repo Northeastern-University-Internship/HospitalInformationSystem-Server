@@ -1,6 +1,5 @@
 package com.neuedu.His02.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
