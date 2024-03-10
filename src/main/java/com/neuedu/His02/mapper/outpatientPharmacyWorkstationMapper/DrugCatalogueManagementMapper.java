@@ -6,11 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/19/15:18
- * @Description:
- */
+
 @Mapper
 public interface DrugCatalogueManagementMapper {
     public List<Drugs> selectAll(Drugs u);

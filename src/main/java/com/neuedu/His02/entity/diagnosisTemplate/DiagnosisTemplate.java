@@ -1,6 +1,5 @@
 package com.neuedu.His02.entity.diagnosisTemplate;
 
-// 表名：医生诊断模板表
 public class DiagnosisTemplate {
     private Integer ID;// ID
     private Integer DeptID;

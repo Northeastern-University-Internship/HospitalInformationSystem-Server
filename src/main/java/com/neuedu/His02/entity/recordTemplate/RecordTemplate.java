@@ -4,7 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-// 表名：患者病历模板表
+
 public class RecordTemplate {
     private Integer ID;
     private String Name;

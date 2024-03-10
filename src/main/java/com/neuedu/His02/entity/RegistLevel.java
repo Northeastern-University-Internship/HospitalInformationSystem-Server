@@ -2,15 +2,15 @@ package com.neuedu.His02.entity;
 
 import java.math.BigDecimal;
 
-// 表名：挂号级别表
+
 public class RegistLevel {
-    private Integer ID;// ID 自增长类型
-    private String RegistCode;// 号别编码
-    private String RegistName;// 号别名称
-    private Integer SequenceNo;// 显示顺序号
-    private BigDecimal RegistFee;// 挂号费
-    private Integer RegistQuota;// 挂号限额
-    private Integer DelMark;// Delete Mark 1 - Normal 0 - Deleted
+    private Integer ID;
+    private String RegistCode;
+    private String RegistName;
+    private Integer SequenceNo;
+    private BigDecimal RegistFee;
+    private Integer RegistQuota;
+    private Integer DelMark;
 
     public Integer getID() {
         return ID;

@@ -8,11 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/22/15:43
- * @Description:
- */
+
 @Service
 @Transactional
 public class RegisteredTollCollectorServiceImpl implements RegisteredTollCollectorService {

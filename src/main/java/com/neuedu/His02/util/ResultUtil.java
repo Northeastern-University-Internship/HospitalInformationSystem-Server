@@ -1,9 +1,6 @@
 package com.neuedu.His02.util;
 
-/**
- * @author GSJ
- * @description 返回结果工具类
- */
+
 public class ResultUtil {
     private Integer code;
     private String msg;

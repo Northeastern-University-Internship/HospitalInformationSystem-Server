@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;;
 
-// 表名：操作员日结表
+
 public class RegistWork {
-    private Integer ID;// ID 自增长类型
-    private Integer RegisterID; // 收费人员 ID 指向 User (ID)
+    private Integer ID;
+    private Integer RegisterID;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date StartTime;// 日结起始时间
+    private Date StartTime;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date EndTime;// 日结结束时间
+    private Date EndTime;
 
     public Integer getID() {
         return ID;

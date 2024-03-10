@@ -5,11 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/19/15:18
- * @Description:
- */
+
 @Mapper
 public interface OutpatientDispensingMapper {
     public List<Prescription> selectAll(Prescription u);

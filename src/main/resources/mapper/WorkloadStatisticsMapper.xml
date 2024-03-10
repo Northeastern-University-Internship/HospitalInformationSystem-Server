@@ -3,7 +3,7 @@
 <mapper namespace="com.neuedu.His02.mapper.OutpatientFinancial.WorkloadStatisticsMapper">
 
 
-    <!-- select标签表示对应查询语句；id值唯一并且要与接口类中的对应方法名一致；resultType值要与接口类中对应方法的返回值类型匹配 -->
+
     <select id="selectAll" resultType="WorkloadStatistics">
         SELECT p.ID,
         p.`Name`,

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace的值，要填写对应模块的mapper接口类的全类名 -->
+
 <mapper namespace="com.neuedu.His02.mapper.outpatientPharmacyWorkstationMapper.OutpatientWithdrawalMapper">
-    <!-- select标签表示对应查询语句；id值唯一并且要与接口类中的对应方法名一致；resultType值要与接口类中对应方法的返回值类型匹配 -->
+
     <select id="selectAll" resultType="Prescription">
         select distinct p.ID,p.UserId, d.DrugsName,d.DrugsFormat,pd.Amount,d.DrugsUnit,d.DrugsPrice,
         (d.DrugsPrice*pd.Amount) as SUM,d.ManuFacturer,pd.DrugsUsage,pd.Dosage,pd.State,r.RealName,

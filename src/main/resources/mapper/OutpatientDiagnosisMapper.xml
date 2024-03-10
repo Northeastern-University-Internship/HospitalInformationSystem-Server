@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace的值，要填写对应模块的mapper接口类的全类名 -->
+
 <mapper namespace="com.neuedu.His02.mapper.outpatientDoctorWorkStationMapper.OutpatientDiagnosisMapper">
-    <!-- select标签表示对应查询语句；id值唯一并且要与接口类中的对应方法名一致；resultType值要与接口类中对应方法的返回值类型匹配 -->
+
     <select id="selectAll" resultType="User">
         select * from User
-        <!-- where标签表示生成where关键字，配合下面的if标签可以动态生成sql语句 -->
+
         <where>
-            <!-- 如果参数对象的uname属性非空且不是空字符串，则if中的sql语句生效；#{uname}表示取得参数对象的uname属性值 -->
+
             <if test="UserName!=null and UserName!=''">
                 and UserName like concat('%', #{UserName}, '%')
             </if>
@@ -23,7 +23,7 @@
         select * from User where ID=#{ID}
     </select>
 
-    <!-- insert标签匹配插入语句，不需要有参数或者返回值设置，框架自动匹配 -->
+
     <insert id="add" useGeneratedKeys="true" keyProperty="ID">
         insert into User(UserName, Password, RealName, UserType, DocTitleID, IsScheduling, DeptID, RegistLeID, DelMark) values(#{UserName}, #{Password}, #{RealName}, #{UserType}, #{DocTitleID}, #{IsScheduling}, #{DeptID}, #{RegistLeID}, #{DelMark})
     </insert>
@@ -63,7 +63,7 @@
     </select>
 
     <select id="getDiagnosisTemplatePersonally" resultType="DiagnosisTemplate">
-        select * from DiagnosisTemplate where UserID=#{ID} and Scope="个人" and DelMark=1
+        select * from DiagnosisTemplate where UserID=#{ID} and Scope="Personal" and DelMark=1
     </select>
 
     <select id="getDiagnosisTemplateByDepartment" resultType="DiagnosisTemplate">
@@ -71,7 +71,7 @@
     </select>
 
     <select id="getDiagnosisTemplateByHospital" resultType="DiagnosisTemplate">
-        select * from DiagnosisTemplate where DelMark=1 and Scope="全院"
+        select * from DiagnosisTemplate where DelMark=1 and Scope="Whole hospital"
     </select>
 
     <update id="deleteDiagnosisTemplate">
@@ -109,7 +109,7 @@
 
 
 
-    <!-- insert标签匹配插入语句，不需要有参数或者返回值设置，框架自动匹配 -->
+
     <insert id="insertRecord" useGeneratedKeys="true" keyProperty="ID">
         insert into MedicalRecord(CaseNumber, RegistID, Readme, Present, PresentTreat, History, Allergy, Physique, Proposal, Careful, CheckResult, Diagnosis, Handling, CaseState) values(#{CaseNumber}, #{RegistID}, #{Readme}, #{Present}, #{PresentTreat}, #{History}, #{Allergy}, #{Physique}, #{Proposal}, #{Careful}, #{CheckResult}, #{Diagnosis}, #{Handling}, #{CaseState})
     </insert>
@@ -125,22 +125,22 @@
 
 
     <select id="getRecordTemplatePersonally" resultType="RecordTemplate">
-        select * from RecordTemplate where UserID=#{ID} and Scope="个人" and DelMark=1
+        select * from RecordTemplate where UserID=#{ID} and Scope="Personal" and DelMark=1
     </select>
 
     <select id="getRecordTemplateByDepartment" resultType="RecordTemplate">
-        select * from RecordTemplate where Scope="科室" and DeptID=#{DeptID} and DelMark=1
+        select * from RecordTemplate where Scope="Department" and DeptID=#{DeptID} and DelMark=1
     </select>
 
     <select id="getRecordTemplateByHospital" resultType="RecordTemplate">
-        select * from RecordTemplate where DelMark=1 and Scope="全院"
+        select * from RecordTemplate where DelMark=1 and Scope="Whole hospital"
     </select>
 
     <update id="deleteRecordTemplate">
         update RecordTemplate set DelMark=0 where UserID=#{UserID} and ID=#{ID}
     </update>
 
-    <!-- insert标签匹配插入语句，不需要有参数或者返回值设置，框架自动匹配 -->
+
 
     <select id="searchIDNumber" resultType="String">
         select IDnumber from Register where CaseNumber=#{CaseNumber}

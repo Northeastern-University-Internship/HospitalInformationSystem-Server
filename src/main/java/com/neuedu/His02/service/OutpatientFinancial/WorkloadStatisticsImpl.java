@@ -9,14 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author BRThree
- * @since 2021-12-17
- */
 @Service
 @Transactional
 public class WorkloadStatisticsImpl implements IWorkloadStatisticsService{

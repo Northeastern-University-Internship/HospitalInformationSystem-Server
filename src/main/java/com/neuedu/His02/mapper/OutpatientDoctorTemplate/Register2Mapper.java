@@ -5,14 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author BRThree
- * @since 2021-12-21
- */
+
 @Mapper
 public interface Register2Mapper {
     public List<Register> selectAll(Register register);

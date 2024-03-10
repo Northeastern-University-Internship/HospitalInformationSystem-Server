@@ -4,14 +4,7 @@ import com.neuedu.His02.entity.PatientCosts;
 
 import java.util.List;
 
-/**
- * <p>
- *  服务类
- * </p>
- *
- * @author BRThree
- * @since 2021-12-21
- */
+
 public interface IPatientcostsService {
     public List<PatientCosts> selectAll(PatientCosts patientCosts);
     public PatientCosts selectById(PatientCosts patientCosts);

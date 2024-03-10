@@ -1,17 +1,17 @@
 package com.neuedu.His02.entity;
 
-// 表名：用户表
+
 public class User {
-    private Integer ID;// ID 自增长类型
-    private String UserName;// 登录名
-    private String Password;// 密码
-    private String RealName;// 真实姓名
-    private Integer UseType;// 用户类别 1-医院管理员 2-挂号收费员 3-门诊医生 4-医技医生 5-药房操作员 6-财务管理员 7-患者
-    private Integer DocTitleID;// 医生职称 ID 指向ConstantItem（ID）
-    private String IsScheduling;// 是否参与排班 是/否
-    private Integer DeptID;// 所在科室 ID 指向Department( ID )
-    private Integer RegistLeID;// 挂号级别 ID 指向RegistLevel(ID)
-    private Integer DelMark;// Delete Mark 1 - Normal 0 - Deleted
+    private Integer ID;
+    private String UserName;
+    private String Password;
+    private String RealName;
+    private Integer UseType;
+    private Integer DocTitleID;
+    private String IsScheduling;
+    private Integer DeptID;
+    private Integer RegistLeID;
+    private Integer DelMark;
 
     public User(Integer ID, String userName, String password, String realName, Integer useType, Integer docTitleID, String isScheduling, Integer deptID, Integer registLeID, Integer delMark) {
         this.ID = ID;

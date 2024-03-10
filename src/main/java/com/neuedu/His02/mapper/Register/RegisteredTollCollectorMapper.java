@@ -5,11 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/22/21:31
- * @Description:
- */
+
 @Mapper
 public interface RegisteredTollCollectorMapper {
 

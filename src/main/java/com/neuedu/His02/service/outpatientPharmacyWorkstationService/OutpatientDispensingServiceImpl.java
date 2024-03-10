@@ -8,11 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/19/15:09
- * @Description:
- */
+
 @Service
 @Transactional
 public class OutpatientDispensingServiceImpl implements OutpatientDispensingService{

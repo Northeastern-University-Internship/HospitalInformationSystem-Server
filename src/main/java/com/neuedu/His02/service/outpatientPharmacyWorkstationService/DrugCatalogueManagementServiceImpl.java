@@ -9,11 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * @Author: ZJH
- * @Date: 2021/12/19/15:12
- * @Description:
- */
 @Service
 @Transactional
 public class DrugCatalogueManagementServiceImpl implements DrugCatalogueManagementService{
