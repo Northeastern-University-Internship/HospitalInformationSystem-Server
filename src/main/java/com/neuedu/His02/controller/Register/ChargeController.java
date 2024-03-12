@@ -25,7 +25,6 @@ public class ChargeController {
     private RegisterService registerService;
 
     @RequestMapping("/allItem")
-    // http://localhost:8899/charge/allItem?ID=35
     public ResultUtil selectAllFmeditem(Register register) {
         List<CheckApply> checkApply = service.selectByIDCheckAppy(register.getID());
         ArrayList<Fmeditem> fmeditems = new ArrayList<Fmeditem>();

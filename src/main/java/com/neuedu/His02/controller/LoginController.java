@@ -14,7 +14,6 @@ public class LoginController {
     @Autowired
     private UserService service;
 
-    // http://localhost:8866/login?UserName=root&Password=root
     @RequestMapping("/login")
     public ResultUtil login(User u) {
         System.out.println("Receiving data from the front："+ u);

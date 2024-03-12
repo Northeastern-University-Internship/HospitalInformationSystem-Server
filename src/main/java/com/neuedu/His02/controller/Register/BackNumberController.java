@@ -22,7 +22,6 @@ public class BackNumberController {
     @Autowired
     private RegisterService service1;
     @PostMapping("/selectAllInvoice")
-//    http://localhost:8899/backnumber/selectAllInvoice
     public ResultUtil selectAllInvoice(Invoice invoice) {
         return new ResultUtil(EnumCode.OK.getValue(), "The account was found successfully",service.selectAllInvoice(invoice));
     }

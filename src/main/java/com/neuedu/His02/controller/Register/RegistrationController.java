@@ -21,14 +21,11 @@ public class RegistrationController {
 	private RegisterService service;
 
 	@RequestMapping("/register")
-	// http://localhost:8899/register_clerk/register?CaseNumber='1'&RealName='1'&Gender=1&IDnumber='1'&BirthDate="2021-12-12"&Age=1&AgeType='1'&HomeAddress='1'&VisitDate='1'&Noon='1'&DeptID=1&UserID=1&RegistLeID=1&SettleID=1&IsBook='1'&RegistTime=1&RegisterID='2021-12-12'&VisitState=1
 	public ResultUtil add(Register r) {
 		System.out.println("Add information："+r.getRegistLeID());
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return new ResultUtil(EnumCode.OK.getValue(),"Registered successfully",service.add(r));
 	}
 	@PostMapping("/selectAll")
-	// http://localhost:8899/register_clerk/selectAll?CaseNumber=60
 	public ResultUtil selectAll(Register r) {
 		System.out.println("The query performed");
 		return new ResultUtil(EnumCode.OK.getValue(), "Query successfully",service.selectAll(r));
